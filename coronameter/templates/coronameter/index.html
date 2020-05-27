@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block navsearch %}
+{#     <form class="form-inline my-2 my-lg-0" method="post" action="/corona/">#}
+{#     {% csrf_token %}#}
+{#      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="fsearch">#}
+{#      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+{#    </form>#}
+       {% endblock %}
+{% block content %}
+     <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>CITY</th>
+        <th>Time</th>
+        <th>climate</th>
+          <th>Temperature</th>
+      </tr>
+    </thead>
+    <tbody>
+    <h3 class="display-3">Search your city</h3>
+    <p>for the particular country you can search as country city.<br><strong class="text-danger">don't use /,\ '' etc between country and city</strong></p>
+     <form class="  form-row my-2 my-lg-0 container" method="post" action="/corona/">
+     {% csrf_token %}
+
+      <input class="form-control mt-4 col-sm-8 " type="search" placeholder="Type your city name" aria-label="Search" name="fsearch">
+      <button class="btn btn-outline-success mt-4 col-sm-1" type="submit">Search</button>
+
+    </form>
+      {% for city_name,time,temp,image,city_link,id in weather %}
+          <tr>
+        <td><a href="/corona/weather_city/{{ id }}/">{{ city_name }}</a></td>
+        <td>{{ time }}</td>
+              <td><img src="{{ image }}" height="40px" width="40px"></td>
+        <td>{{ temp }}</td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+{% endblock %}

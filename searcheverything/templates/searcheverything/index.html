@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block navsearch %}
+    <form class="form-inline my-2 my-lg-0" method="post" action="/searcheverything/">
+     {% csrf_token %}
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+{% endblock %}
+{% block content %}
+    {% if allprod %}
+        <div class="ui container">
+        <div class="ui row">
+                {% for images,titles,links,id in allprod %}
+               <div class="ui four wide column">
+                 <div class="ui card">
+  <div class="image">
+    <img srcset="{{ images }}">
+  </div>
+  <div class="content">
+    <a class="header" href="/searcheverything/gadgets/{{ id }}/">{{ titles }}</a>
+
+
+  </div>
+
+</div>
+               </div>
+        {% endfor %}
+        </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

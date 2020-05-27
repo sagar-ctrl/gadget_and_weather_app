@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="ui container">
+{% for p,h2 in page %}
+
+    <h2 class="mt-2 mb-4">{{ h2 }}</h2>
+    <img height="580px" width="600px" srcset="{{ image }}"/>
+    <p class="text-justify">{{ p }}</p>
+{% endfor %}</div>
+{% endblock %}

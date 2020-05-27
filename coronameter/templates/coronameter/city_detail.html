@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+{#    <div class=mt -3 card mb-3" style="max-width: 400px;">#}
+{#  <div class="row no-gutters mt-3">#}
+{#    <div class="col-md-4">#}
+{#      <img src="{{ image }}" class="card-img" alt="...">#}
+{#    </div>#}
+{#    <div class="col-md-8">#}
+{#      <div class="card-body">#}
+{#        <h5 class="card-title">{{ climate }}</h5>#}
+{#        <p class="card-text">{{ feels }}</p>#}
+{#        <p class="card-text"><small class="text-muted">{{ temp }}</small></p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</div>#}
+    <div class="container row">
+    <div class="  col-sm-4 col-md-4 col xs-4" style="height: 250px">
+           <div class="mt -3 card mb-3" style="max-width: 400px;">
+  <div class="row no-gutters mt-3">
+    <div class="col-md-4">
+      <img src="{{ image }}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ climate }}</h5>
+        <p class="card-text">{{ feels }}</p>
+          <p class="card-text"><small class="text-muted"><h3>Temperature:{{ temp }}</h3></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-4 bg-secondary " style="height: 250px">
+
+
+<p style="font-size: 110%"  >
+    {{ location }}
+</p>
+        <p style="font-size: 110%"  >
+    {{ curr_time }}
+</p>
+        <p style="font-size: 110%"  >
+    {{ latest }}
+</p>
+        <p style="font-size: 110%" >
+    {{ visibility }}
+</p>
+        <p style="font-size: 110%"  >
+    {{ pressure }}
+</p>
+        <p style="font-size: 110%"  >
+    {{ humidity }}
+</p>
+        <p style="font-size: 110%"  >
+    {{ dew_point }}
+</p>
+
+    </div>
+    <div class="  col-sm-4 col-md-4 col xs-4" style="height: 250px">
+<img src="{{ map }}" class="mt-3"/>
+    </div>
+    </div>
+
+
+
+{% endblock %}
